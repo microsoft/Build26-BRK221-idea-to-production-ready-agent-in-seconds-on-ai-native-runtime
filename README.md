@@ -1,36 +1,3 @@
-# 🚀 Get Started
-
-**This repo is where attendees go to continue their learning after your session — and your Copilot agent will help you set it up.**
-
-### Step 1: Open your repo
-
-Open this repo in a **Codespace** (click the green **Code** button → **Create a Codespace**) — or clone it locally. Then open **GitHub Copilot Chat**.
-
-### Step 2: Add your content
-
-Give the agent something to work with. Drag files into the Explorer panel — session abstracts, outlines, screenshots, notes — and drop them in one of two places:
-
-| Where to put it | What goes there | Who sees it |
-|---|---|---|
-| **`_remove-before-publish/`** | Internal reference materials (abstracts, outlines, screenshots, planning docs) | **Copilot only** — never published |
-| **`/docs/`, `/src/`, or repo root** | Lab instructions, demo code, sample data, getting-started guides | **Attendees** — published with the repo |
-
-> 💡 Not sure? Start by dropping your session abstract or outline into `_remove-before-publish/`. The agent will figure out what to do with it.
-
-### Step 3: Ask the Agent
-
-Once your content is in the repo, use these three phrases with Copilot to build out your session repo:
-
-| Phrase to use with Copilot | What it does | When to run it |
-|---|---|---|
-| **"Help me get started"** | Sets up session title, description, outcomes, and owners | After you've added your session abstract or outline to the repo |
-| **"Help me refine content"** | Organizes your session content into the repo | Each time you add or update content |
-| **"Help me finalize"** | Final review, cleanup, and publication prep | When you're ready to publish |
-
-> 💡 **These three phrases are just the starting point.** Copilot can do much more — try asking it to brainstorm next steps for attendees, generate code samples, or build out your repo structure. Don't be afraid to put it in plan mode and ask for what you need.
-
----
-
 <a name="start-building"></a>
 <br>
 <p align="center">
@@ -45,12 +12,21 @@ Once your content is in the repo, use these three phrases with Copilot to build 
 
 Agentic workloads demand a fundamentally different runtime than traditional app hosting. In this breakout you'll see why, and how Azure Container Apps delivers the speed, isolation, and scale needed to run production-ready agents — including sandboxes, MCP tools, and serverless GPUs. We pair a live end-to-end demo with a customer story so you walk away with patterns and resources to go from idea to deployed agent in seconds, on an AI-native runtime you can trust in production.
 
+### 📦 Source code
+
+The Act 2 live demo (**VoiceConnect** — a multi-agent voice and chat assistant on Azure Container Apps) is maintained at **[simonjj/voiceconnect](https://github.com/simonjj/voiceconnect)**. Clone that repo to run the demo end-to-end in your own Azure subscription. The architecture and a guided deployment walkthrough are in [`docs/`](docs/).
+
 ### 🚀 Getting started
 
 If you're following these steps at your own pace:
-- Clone this repository
-- Set up your development environment
-- <!-- step 3 -->
+
+```powershell
+gh repo clone simonjj/voiceconnect
+cd voiceconnect
+./infra/deploy.ps1 -SubscriptionId <your-sub-id>
+```
+
+You will need an Azure subscription with quota for serverless GPUs in Sweden Central and an Azure Container Apps Express environment in West Central US. The script provisions everything, builds the container images via Azure Container Registry Tasks, deploys all seven container apps, and prints the browser client URL when it finishes. See [`docs/deployment.md`](docs/deployment.md) for the full prerequisites, what gets provisioned, and useful flags.
 
 ### 🧠 Learning Outcomes
 
@@ -62,13 +38,25 @@ By the end of this session, you will be able to:
 
 ### 💬 Keep Learning with Copilot
 
-Try these prompts with GitHub Copilot to explore the topics from this session. Open Copilot Chat in VS Code (`Ctrl+Alt+I` on Windows/Linux, `Cmd+Shift+I` on Mac), paste a prompt, and see what you learn. Try connecting the [Microsoft Learn MCP Server](#-microsoft-learn-mcp-server) for the latest official documentation.
+Try these prompts with GitHub Copilot to explore the topics from this session. Open Copilot Chat in Visual Studio Code (`Ctrl+Alt+I` on Windows/Linux, `Cmd+Shift+I` on Mac), paste a prompt, and see what you learn. Try connecting the [Microsoft Learn MCP Server](#-microsoft-learn-mcp-server) for the latest official documentation.
 
-Use these as a starting point — or write your own!
+1. Trace a single voice turn through the stack:
 
-<!-- Prompts will be tailored to this session's content during repo setup. -->
+    ```
+    Walk me through how a single voice turn flows from the browser, through Whisper for speech-to-text, the multi-agent server, an agent's Azure Container Apps Sandbox, Kokoro for text-to-speech, and back. Use the simonjj/voiceconnect repository as the reference.
+    ```
 
-> *Prompts coming soon — check back after the session content is finalized.*
+2. Use Microsoft Learn to dive deeper on Azure Container Apps Sandboxes:
+
+    ```
+    Using the Microsoft Learn MCP Server, find the latest documentation on Azure Container Apps Sandboxes (session pools) and explain how to use them to isolate tool calls between agents in a multi-agent application.
+    ```
+
+3. Extend the demo with a new managed agent:
+
+    ```
+    Help me add a third persona to the voiceconnect demo that is backed by a managed Azure SRE Agent (Microsoft.App/agents). Show me what code, infrastructure, and configuration changes I would need to make.
+    ```
 
 ### 💻 Technologies Used
 
@@ -85,6 +73,13 @@ Use these as a starting point — or write your own!
 
 | Resource | Description |
 |:---------|:------------|
+| [VoiceConnect on GitHub](https://github.com/simonjj/voiceconnect) | The maintained demo repository — clone this to run the live demo in your own subscription |
+| [BRK221 Architecture](docs/architecture.md) | Component-by-component breakdown of the demo and the data plane on a single turn |
+| [BRK221 Deployment guide](docs/deployment.md) | Prerequisites and what `deploy.ps1` provisions |
+| [Azure Container Apps overview](https://learn.microsoft.com/azure/container-apps/overview) | The managed serverless container runtime that hosts the demo |
+| [Azure Container Apps Sandboxes](https://learn.microsoft.com/azure/container-apps/sessions) | Per-agent isolated session pools that run the GitHub Copilot CLI in the demo |
+| [Serverless GPUs in Azure Container Apps](https://learn.microsoft.com/azure/container-apps/gpu-serverless-overview) | The GPU workload profiles used to host Whisper and Kokoro |
+| [Twilio ConversationRelay](https://www.twilio.com/docs/voice/twiml/connect/conversationrelay) | The phone-call streaming primitive used by the Twilio bridge |
 | [https://aka.ms/build26-next-steps](https://aka.ms/build26-next-steps) | Explore lab and session repos to further your learning from Microsoft Build |
 
 
@@ -92,7 +87,7 @@ Use these as a starting point — or write your own!
 
 The Microsoft Learn MCP Server gives your AI agent direct access to Microsoft's official documentation — grounded, up-to-date answers about the products and services covered in this session.
 
-**VS Code** — One click installation: 
+**Visual Studio Code** — One click installation: 
 
 [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_Microsoft_Learn_MCP-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=microsoft-learn&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Flearn.microsoft.com%2Fapi%2Fmcp%22%7D)
 
