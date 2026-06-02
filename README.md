@@ -39,20 +39,13 @@ Once your content is in the repo, use these three phrases with Copilot to build 
 
 # [Microsoft Build 2026](https://build.microsoft.com)
 
-## 🔥 BRKXXX: SESSION TITLE
+## 🔥 BRK221: Idea to production-ready agent in seconds on AI-native runtime
 
 ### Session Description
 
-*Add Session Description*
+Agentic workloads demand a fundamentally different runtime than traditional app hosting. In this breakout you'll see why, and how Azure Container Apps delivers the speed, isolation, and scale needed to run production-ready agents — including sandboxes, MCP tools, and serverless GPUs. We pair a live end-to-end demo with a customer story so you walk away with patterns and resources to go from idea to deployed agent in seconds, on an AI-native runtime you can trust in production.
 
-### 🏫 Getting started in a guided session
-
-To get started in a guided lab session:
-- <!-- step 1 -->
-- <!-- step 2 -->
-- <!-- step 3 -->
-
-### 🏠 Getting started in your own environment
+### 🚀 Getting started
 
 If you're following these steps at your own pace:
 - Clone this repository
@@ -63,9 +56,9 @@ If you're following these steps at your own pace:
 
 By the end of this session, you will be able to:
 
-- <!-- outcome 1 -->
-- <!-- outcome 2 -->
-- <!-- outcome 3 -->
+- Explain why agentic workloads demand a fundamentally different runtime than traditional app hosting, and the key challenges teams face taking agents to production.
+- Describe how Azure Container Apps delivers the speed, isolation, and scale needed to run production-ready agents — including sandboxes, Model Context Protocol tools, and serverless GPUs.
+- Apply patterns and resources to go from idea to deployed agent in seconds on an AI-native runtime you can trust in production.
 
 ### 💬 Keep Learning with Copilot
 
@@ -79,9 +72,14 @@ Use these as a starting point — or write your own!
 
 ### 💻 Technologies Used
 
-1. <!-- technology 1 -->
-1. <!-- technology 2 -->
-1. <!-- technology 3 -->
+1. [Azure Container Apps](https://learn.microsoft.com/azure/container-apps/overview)
+1. [Azure Container Apps Sandboxes (Session Pools)](https://learn.microsoft.com/azure/container-apps/sessions)
+1. [Serverless GPUs in Azure Container Apps](https://learn.microsoft.com/azure/container-apps/gpu-serverless-overview)
+1. [Azure Container Apps Express environment](https://learn.microsoft.com/azure/container-apps/environment)
+1. [Twilio ConversationRelay](https://www.twilio.com/docs/voice/twiml/connect/conversationrelay)
+1. [GitHub Copilot CLI](https://docs.github.com/copilot/github-copilot-in-the-cli/about-github-copilot-in-the-cli)
+1. [Azure Application Insights](https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview)
+1. [Bicep](https://learn.microsoft.com/azure/azure-resource-manager/bicep/overview)
 
 ### 📚 Resources and Next Steps
 
@@ -108,17 +106,17 @@ For more info, other clients, and to post questions, visit the [Learn MCP Server
 
 ## Content Owners
 
-<!-- TODO: Add yourself as a content owner
-1. Change the src in the image tag to {your github url}.png
-2. Change INSERT NAME HERE to your name
-3. Change the github url in the final href to your url. -->
-
 <table>
 <tr>
-    <td align="center"><a href="http://github.com/yourGitHubHandle">
-        <img src="https://github.com/yourGitHubHandle.png" width="100px;" alt="INSERT NAME HERE"/><br />
-        <sub><b>INSERT NAME HERE</b></sub></a><br />
-            <a href="https://github.com/yourGitHubHandle" title="talk">📢</a>
+    <td align="center"><a href="http://github.com/devanshidiaries">
+        <img src="https://github.com/devanshidiaries.png" width="100px;" alt="Devanshi Joshi"/><br />
+        <sub><b>Devanshi Joshi</b></sub></a><br />
+            <a href="https://github.com/devanshidiaries" title="talk">📢</a>
+    </td>
+    <td align="center"><a href="http://github.com/simonjj">
+        <img src="https://github.com/simonjj.png" width="100px;" alt="Simon Jakesch"/><br />
+        <sub><b>Simon Jakesch</b></sub></a><br />
+            <a href="https://github.com/simonjj" title="talk">📢</a>
     </td>
 </tr></table>
 
